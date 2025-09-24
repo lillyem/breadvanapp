@@ -26,7 +26,6 @@ This app uses a **CLI interface** for testing and simulating driver–resident i
 
 | Title    | Command                    |
 |------|--------------------------|
-
 | Create Driver | flask driver create "DriverName" "LocationName" |
 | Schedule Drive | flask driver schedule "DriverName" "LocationName" ResidentID |
 | Check Status | flask driver status "DriverName" |
@@ -37,7 +36,6 @@ This app uses a **CLI interface** for testing and simulating driver–resident i
 
 | Title    | Command                    |
 |------|--------------------------|
-
 | Create Resident | flask resident create "ResidentName" "LocationName" |
 | Inbox | flask resident inbox "ResidentName" |
 | Request Stop | flask resident request-stop "ResidentName" "DriverName" |
