@@ -8,7 +8,8 @@ class Route(db.Model):
     driver_id = db.Column(
         db.Integer, db.ForeignKey("drivers.driver_id", ondelete="CASCADE"), nullable=False
     )
-    location_id = db.Column(db.Integer, nullable=False)
+    location_name = db.Column(db.String(80), nullable=False)
+    resident_id = db.Column(db.Integer, nullable=True)
     route_status = db.Column(
         db.String(20), nullable=False, default="idle"
     )  
@@ -22,32 +23,32 @@ class Route(db.Model):
         lazy="selectin",
     )
 
-    def add_stop(self, *, location_id: int):
+    def add_stop(self, *, location_name: str):
         
         from .stop import Stop
 
         stop = Stop(
             route_id=self.route_id,
-            location_id=location_id,
+            location_name=location_name,
             stop_status="pending",
         )
         db.session.add(stop)
         return stop
 
-    def receive_request(self, resident_id: int, location_id: int) -> str:
+    def receive_request(self, resident_id: int, location_name: str) -> str:
     
-        self.location_id = location_id
+        self.location_name = location_name
         self.route_status = "assigned"
         return (
             f"Request from resident {resident_id} received; "
-            f"driver assigned to location {location_id}."
+            f"driver assigned to location {location_name}."
         )
 
     def get_json(self):
         return {
             "route_id": self.route_id,
             "driver_id": self.driver_id,
-            "location_id": self.location_id,
+            "location_name": self.location_name,
             "route_status": self.route_status,
             "stops": [s.stop_id for s in self.stops],
         }
