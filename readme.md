@@ -22,6 +22,22 @@ This app uses a **CLI interface** for testing and simulating driver–resident i
 
 3. Run the CLI commands below to test.
 
+## User Commands
+
+| Title    | Command                    |
+|------|--------------------------|
+| Create User | flask user create "username" "password" |
+| List Users | flask user list string |
+| List Users (JSON) | flask user list json |
+
+## Test Commands
+
+| Title    | Command                    |
+|------|--------------------------|
+| Run All Tests | flask test user all |
+| Run Unit Tests | flask test user unit |
+| Run Integration Tests | flask test user int |
+
 ## Driver Commands
 
 | Title    | Command                    |
