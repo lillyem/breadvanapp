@@ -43,11 +43,11 @@ This app uses a **CLI interface** for testing and simulating driver–resident i
 
 ## Example Workflow
 
-flask driver create "Alice" "Downtown"
-flask resident create "Bob" "Uptown"
-flask driver schedule "Alice" "Uptown" 1
-flask resident inbox "Bob"
-flask resident request-stop "Bob" "Alice"
-flask resident track "Bob" "Alice"
+flask driver create "Alice" "Downtown"  
+flask resident create "Bob" "Uptown"  
+flask driver schedule "Alice" "Uptown" 1  
+flask resident inbox "Bob"  
+flask resident request-stop "Bob" "Alice"  
+flask resident track "Bob" "Alice"  
 
 
