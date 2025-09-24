@@ -24,18 +24,24 @@ This app uses a **CLI interface** for testing and simulating driver–resident i
 
 ## Driver Commands
 
-Create Driver - flask driver create "DriverName" "LocationName"
-Schedule Drive - flask driver schedule "DriverName" "LocationName" ResidentID
-Check Status - flask driver status "DriverName"
-Update Location - flask driver update-location "DriverName" "LocationName"
-Update Status - flask driver update-status "DriverName" "Status"
+| Title    | Command                    |
+|------|--------------------------|
+
+| Create Driver | flask driver create "DriverName" "LocationName" |
+| Schedule Drive | flask driver schedule "DriverName" "LocationName" ResidentID |
+| Check Status | flask driver status "DriverName" |
+| Update Location | flask driver update-location "DriverName" "LocationName" |
+| Update Status | flask driver update-status "DriverName" "Status" |
 
 ## Resident Commands
 
-Create Resident - flask resident create "ResidentName" "LocationName"
-Inbox - flask resident inbox "ResidentName"
-Request Stop - flask resident request-stop "ResidentName" "DriverName"
-Track Driver - flask resident track "ResidentName" "DriverName"
+| Title    | Command                    |
+|------|--------------------------|
+
+| Create Resident | flask resident create "ResidentName" "LocationName" |
+| Inbox | flask resident inbox "ResidentName" |
+| Request Stop | flask resident request-stop "ResidentName" "DriverName" |
+| Track Driver | flask resident track "ResidentName" "DriverName" |
 
 ## Example Workflow
 
