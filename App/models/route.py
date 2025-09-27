@@ -50,5 +50,4 @@ class Route(db.Model):
             "driver_id": self.driver_id,
             "location_name": self.location_name,
             "route_status": self.route_status,
-            "stops": [s.stop_id for s in self.stops],
         }

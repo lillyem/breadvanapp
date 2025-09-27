@@ -46,7 +46,7 @@ class Driver(db.Model):
             "driver_name": self.driver_name,
             "status": self.status,
             "location_name": self.location_name,
-            "routes": [r.route_id for r in self.routes],
+            "routes": [route.route_id for route in self.routes],
         }
 
 
@@ -71,7 +71,6 @@ class Resident(db.Model):
         )
 
     def send_request(self, driver_id: int, location_name: str):
-        
         from .route import Route
 
         route = (
@@ -81,7 +80,11 @@ class Resident(db.Model):
         )
         if not route:
             return f"No active route found for driver {driver_id}."
+        
         return route.receive_request(self.resident_id, location_name)
+
+
+
 
     def track_driver(self, driver_id: int):
         

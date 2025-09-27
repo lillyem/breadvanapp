@@ -104,7 +104,8 @@ def driver_schedule(name, location_name, resident_id):
 def driver_status(name):
     d = Driver.query.filter_by(driver_name=name).first_or_404()
     click.echo(d.get_json())
-
+    return None
+    
 @driver_cli.command("update-location") # flask driver update-location Alice Midtown
 @click.argument("name")
 @click.argument("location_name")
